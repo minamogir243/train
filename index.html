@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>車両管理ゲーム</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>車両管理ゲーム</h1>
+
+    <div id="money-display">現在のお金: <span id="formatted-money">1,000,000円</span></div>
+
+    <div id="train-management">
+        <h2>車両管理</h2>
+        <div>
+            <label>車両名称: <input type="text" id="train-name"></label>
+            <label>両数: <input type="number" id="train-cars" min="1" max="6" value="1"></label>
+            <label>種別:
+                <select id="train-type">
+                    <option value="普通" data-cost="200">普通</option>
+                    <option value="急行" data-cost="500">急行</option>
+                    <option value="特急" data-cost="750">特急</option>
+                    <option value="観光特急" data-cost="1000">観光特急</option>
+                </select>
+            </label>
+            <label>メモ: <input type="text" id="train-memo"></label>
+            <button id="add-train">車両を追加</button>
+        </div>
+        <div id="train-list"></div>
+    </div>
+
+    <div id="route-management">
+        <h2>路線管理</h2>
+        <button id="add-route" disabled>路線を追加 (¥500,000)</button>
+        <div id="route-list"></div>
+    </div>
+
+    <div id="game-rules">
+        <h2>ゲームの説明</h2>
+        <p>このゲームでは、車両を管理し、運転してお金を稼ぎます。以下が主なルールです。</p>
+        <ul>
+            <li>最初の所持金は1万円です。</li>
+            <li>車両を登録して、収益を上げましょう。</li>
+            <li>車両の種別ごとに追加料金がかかります。</li>
+            <li>2両以上の車両には維持費がかかります。2両～3両：200円、4両以上：追加で200円。</li>
+            <li>路線は1つにつき50万円で追加できます。</li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
